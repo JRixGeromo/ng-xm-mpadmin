@@ -1,0 +1,57 @@
+@import "../app.component.scss";
+
+.login-container {
+    display         : flex;
+    align-items     : center;
+    justify-content : center;
+    background-color: $--color-primary-bg;
+    padding         : 0 14px;
+    height          : 100vh;
+}
+
+.main-header {
+    font-family: $font-family-montserrat;
+    font-style : normal;
+    font-weight: 700;
+    font-size  : 24px;
+    line-height: 29px;
+}
+
+.fg {
+    margin-top: -10px;
+    margin-bottom: 20px;
+    color:#575757;
+    text-align: right;
+    font-size: 12px;
+}
+
+.sub-label-light {
+    font-style    : normal;
+    font-weight   : 300;
+    line-height   : 18px;
+    letter-spacing: 0em;
+}
+
+.lg-button {
+    font-family   : $font-family-montserrat !important;
+    font-style    : normal !important;
+    font-weight   : bold;
+    font-size     : 16px !important;
+    text-transform: uppercase !important;
+    padding       : 4px 26px !important;
+    min-height    : 32px !important;
+    white-space   : unset !important;
+    background-color: #575757 !important;
+    color           : #FFF !important;
+    border          : 1px solid #575757;
+    cursor          : pointer;
+
+    &:hover,
+    &:active {
+        border: 1px solid #575757;
+    }
+    &.is-disabled {
+        opacity: 0.6 !important;
+    }
+}
+

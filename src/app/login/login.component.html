@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="login-container">
+    <div style="text-align:center;">
+        <h1 class="main-header">XMarketplace</h1>
+        <h1 class="main-header">Admin Panel</h1>
+        <form [formGroup]="loginUserForm" (submit)="loginUser()">
+            <p>
+                <mat-form-field appearance="outline" style="width: 300px;">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="Username" formControlName="username">
+                <mat-error *ngIf="loginUserForm.controls['username'].errors && loginUserForm.controls['username'].hasError('required')">
+                    Username is requred
+                </mat-error>
+                <mat-error *ngIf="loginUserForm.controls['username'].errors && loginUserForm.controls['username'].hasError('minlength')">
+                    Username should be 3 or more
+                </mat-error>
+                </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field appearance="outline" style="width: 300px;">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput placeholder="Password" formControlName="password">
+                <mat-error *ngIf="loginUserForm.controls['password'].errors && loginUserForm.controls['password'].hasError('required')">
+                    Password is requred
+                </mat-error>
+                </mat-form-field>
+            </p>
+            <div class="fg">
+                <span class="sub-label-light fs-12">Forgot password?</span>
+            </div>
+            <p>
+            <button class="lg-button" mat-raised-button [disabled]="!loginUserForm.valid">LOGIN</button>
+            </p>
+        </form>
+    </div>
+</div>
