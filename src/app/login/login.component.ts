@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserService } from '../services/user.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private userService: UserService,
+    private authService: AuthService,
     private _snackBar: MatSnackBar,
   ) { }
 
@@ -25,11 +25,13 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  loginUser() {
-    this.userService.loginUser(this.loginUserForm.value).subscribe(data => {
-      this._snackBar.open('User created successfully.');
+  login() {
+    this.authService.login(this.loginUserForm.value).subscribe(data => {
+      console.log('data', data);
+      this._snackBar.open('Login successfully.');
     }, err => {
-      this._snackBar.open('Unable to create user.');
+      console.log('err', err);
+      this._snackBar.open('Unable to login.');
     });
   }
 
