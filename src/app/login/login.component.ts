@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     this.loginUserForm = this.formBuilder.group({
       'username': new FormControl('', [Validators.required, Validators.minLength(3)]),
       'password': new FormControl('', [Validators.required]),
+      'applicationDomain': 'xm_mp',
     });
   }
 

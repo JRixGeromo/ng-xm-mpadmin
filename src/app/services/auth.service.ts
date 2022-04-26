@@ -11,8 +11,8 @@ export class AuthService {
 
   login(loginCredentials: object) {
     console.log('loginCredentials', loginCredentials);
-    console.log('this.apiService.baseUrl', this.apiService.baseUrl);
-    console.log('this.apiService.headers', this.apiService.headers);
+    console.log('baseUrl', this.apiService.baseUrl);
+    console.log('headers', this.apiService.headers);
     return this.http.post( this.apiService.baseUrl + 'api/user/v1/auth', loginCredentials, {'headers':this.apiService.headers});
   }
 
