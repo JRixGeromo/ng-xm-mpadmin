@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { ApiService } from './api.service';
 
 @Injectable({
@@ -10,10 +11,12 @@ export class AuthService {
   constructor(private http: HttpClient,private apiService: ApiService) { }
 
   login(loginCredentials: object) {
-    console.log('loginCredentials', loginCredentials);
-    console.log('baseUrl', this.apiService.baseUrl);
-    console.log('headers', this.apiService.headers);
-    return this.http.post( this.apiService.baseUrl + 'api/user/v1/auth', loginCredentials, {'headers':this.apiService.headers});
+    const loginDetails = {
+      ...loginCredentials,
+      applicationDomain: environment.ANG_APP_APPLICATION_DOMAIN,
+      secret: environment.ANG_APP_SECRET,
+    };
+    return this.http.post( this.apiService.ApiIniBaseUrl + 'api/user/v1/auth', loginDetails, {'headers':this.apiService.headers});
   }
 
 }

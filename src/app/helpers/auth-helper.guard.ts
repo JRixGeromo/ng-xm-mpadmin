@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
+/* import { AUTH_TOKEN_KEY, AUTH_ID, ADMIN_ROLE } from '../common/constants'; */
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,11 @@ export class AuthHelperGuard implements CanActivate {
       return true;
     }
   }
+
+  /* saveAuthInfo(authInfo: any) {
+    this.cookieService.set(AUTH_TOKEN_KEY, authInfo.token);
+    this.cookieService.set(AUTH_TOKEN_KEY, authInfo);
+  } */
 
   canActivate(
     route: ActivatedRouteSnapshot,
