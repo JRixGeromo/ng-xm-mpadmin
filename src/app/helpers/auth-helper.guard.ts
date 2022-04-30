@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
-/* import { AUTH_TOKEN_KEY, AUTH_ID, ADMIN_ROLE } from '../common/constants'; */
+import { ConstantsService } from '../services/constants.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,10 +12,12 @@ export class AuthHelperGuard implements CanActivate {
   constructor(
     private cookieService: CookieService,
     private router: Router,
+    private constantsService: ConstantsService
   ) { }
 
   isLoggin() {
-    const authToken = this.cookieService.get('Test');
+    const authToken = this.cookieService.get(this.constantsService.AUTH_TOKEN_KEY);
+    console.log('authToken', authToken);
     if (authToken === null || authToken === '') {
       return false;
     } else {
@@ -23,10 +25,23 @@ export class AuthHelperGuard implements CanActivate {
     }
   }
 
-  /* saveAuthInfo(authInfo: any) {
-    this.cookieService.set(AUTH_TOKEN_KEY, authInfo.token);
-    this.cookieService.set(AUTH_TOKEN_KEY, authInfo);
-  } */
+  getAuthToken() {
+    return this.cookieService.get(this.constantsService.AUTH_TOKEN_KEY);
+  }
+
+  getAuthID() {
+    return this.cookieService.get(this.constantsService.AUTH_ID);
+  }
+
+  saveAuthInfo(authInfo: any) {
+    this.cookieService.set(this.constantsService.AUTH_TOKEN_KEY, authInfo.token);
+    this.cookieService.set(this.constantsService.AUTH_ID, authInfo);
+  }
+
+  removeAuthInfo() {
+    this.cookieService.delete(this.constantsService.AUTH_TOKEN_KEY);
+    this.cookieService.delete(this.constantsService.AUTH_ID);
+  }
 
   canActivate(
     route: ActivatedRouteSnapshot,

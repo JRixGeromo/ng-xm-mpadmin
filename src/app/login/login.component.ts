@@ -3,6 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { AuthHelperGuard } from '../helpers/auth-helper.guard';
 import { AuthService } from '../services/auth.service';
 import { ProfileService } from '../services/profile.service';
 
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private profileService: ProfileService,
     private router: Router,
+    private authHelper: AuthHelperGuard,
     private _snackBar: MatSnackBar,
   ) { }
 
@@ -44,6 +46,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.authService.login(this.loginUserForm.value).subscribe(data => {
       this._snackBar.open('Login successfully.');
+        this.authHelper.saveAuthInfo(data);
         /* this.profileService.getProfilebyUserId(data.userId).subscribe(profileData){
           this.newProfileDetail = {
             ...data,
