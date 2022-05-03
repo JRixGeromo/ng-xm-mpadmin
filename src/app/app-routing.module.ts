@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthHelperGuard } from './helpers/auth-helper.guard';
-import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './views/dashboard/dashboard.component';
+import { LoginComponent } from './views/login/login.component';
+import { LogoutComponent } from './views/logout/logout.component';
 
 const routes: Routes = [
   { 
@@ -10,7 +11,14 @@ const routes: Routes = [
     component: DashboardComponent,
     canActivate: [AuthHelperGuard],
   },
-  { path: 'login' , component: LoginComponent },
+  { 
+    path: 'login' ,
+    component: LoginComponent,
+  },
+  { 
+    path: 'logout' ,
+    component: LogoutComponent,
+  },
 ];
 
 @NgModule({

@@ -46,13 +46,12 @@ export class AuthHelperGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      let isUserLoggedIn = this.isLoggin();
-
-      if (!isUserLoggedIn) {
-        this.router.navigate(['/login']);
+      
+      if (!this.isLoggin()) {
+        this.router.navigate(['login']);
       }
 
-      return isUserLoggedIn;
+      return this.isLoggin();
   }
   
 }

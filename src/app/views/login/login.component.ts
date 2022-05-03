@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { AuthHelperGuard } from 'src/app/helpers/auth-helper.guard';
+import { AuthService } from 'src/app/services/auth.service';
+import { ProfileService } from 'src/app/services/profile.service';
 import { environment } from 'src/environments/environment';
-import { AuthHelperGuard } from '../helpers/auth-helper.guard';
-import { AuthService } from '../services/auth.service';
-import { ProfileService } from '../services/profile.service';
 
 export interface userProfile {
   userId: string;

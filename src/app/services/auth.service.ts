@@ -19,4 +19,8 @@ export class AuthService {
     return this.http.post( this.apiService.ApiIniBaseUrl + 'api/user/v1/auth', loginDetails, {'headers':this.apiService.headers});
   }
 
+  logout() {
+      return this.http.post( this.apiService.ApiIniBaseUrl + '/api/user/v1/session/terminate', null, this.apiService.SetAuthHeader());
+  }
+
 }
