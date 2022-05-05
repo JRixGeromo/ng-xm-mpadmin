@@ -1,0 +1,21 @@
+<div class="main-container">
+    <!-- <mat-toolbar color="primary" class="example-toolbar">
+      <button mat-icon-button (click)="navbartoggler.toggle()"><mat-icon>menu</mat-icon></button>
+      <h1 class="example-app-name">Responsive App</h1>
+    </mat-toolbar> -->
+  
+    <mat-sidenav-container class="example-sidenav-container" hasBackdrop="false">
+      <mat-sidenav #navbartoggler [mode]="mobileQuery.matches ? 'over' : 'side'" opened disableClose>
+        <mat-nav-list>
+          <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
+          <app-sidebar-nav-menu></app-sidebar-nav-menu>
+        </mat-nav-list>
+      </mat-sidenav>
+  
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  
+  

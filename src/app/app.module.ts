@@ -16,10 +16,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
 
 import { CookieService } from 'ngx-cookie-service';
 import { SidebarNavMenuComponent } from './components/Layout/sidebar-nav-menu/sidebar-nav-menu.component';
 import { LogoutComponent } from './views/logout/logout.component';
+import { AdminLayoutComponent } from './views/layout/admin-layout/admin-layout.component';
+import { LoginLayoutComponent } from './views/layout/login-layout/login-layout.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,9 @@ import { LogoutComponent } from './views/logout/logout.component';
     LoginComponent,
     DashboardComponent,
     SidebarNavMenuComponent,
-    LogoutComponent
+    LogoutComponent,
+    AdminLayoutComponent,
+    LoginLayoutComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +48,7 @@ import { LogoutComponent } from './views/logout/logout.component';
     MatSnackBarModule,
     HttpClientModule,
     MatToolbarModule,
+    MatListModule,
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 }},

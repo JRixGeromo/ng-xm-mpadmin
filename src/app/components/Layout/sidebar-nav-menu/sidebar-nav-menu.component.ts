@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConstantsService } from 'src/app/services/constants.service';
 
 @Component({
   selector: 'app-sidebar-nav-menu',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarNavMenuComponent implements OnInit {
 
-  constructor() { }
+  menu: any;
+
+  constructor(
+    private navMenu: ConstantsService
+  ) { this.menu = this.navMenu.NAV_MENU }
 
   ngOnInit(): void {
+    
   }
 
 }

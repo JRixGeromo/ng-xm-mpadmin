@@ -19,3 +19,20 @@ $--text-align: center;
 .fs-12 {
     font-size: 12px !important;
 }
+
+.dashboard-container {
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .dashboard-sidenav-content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dashboard-sidenav {
+    padding: 20px;
+  }
+  

@@ -1,3 +1,6 @@
 <div style="text-align:center; padding: 20px 0;">
     <span class="custom-menu-title">XMarketplace</span>
 </div>
+<nav *ngFor="let nav of menu; index as i;">
+    <a routerLink="{{nav.route}}" routerLinkActive="active">{{nav.name}}</a>
+</nav>

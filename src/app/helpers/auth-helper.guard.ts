@@ -17,7 +17,6 @@ export class AuthHelperGuard implements CanActivate {
 
   isLoggin() {
     const authToken = this.cookieService.get(this.constantsService.AUTH_TOKEN_KEY);
-    console.log('authToken', authToken);
     if (authToken === null || authToken === '') {
       return false;
     } else {
@@ -47,6 +46,7 @@ export class AuthHelperGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       
+      console.log('authhelper', this.isLoggin());
       if (!this.isLoggin()) {
         this.router.navigate(['login']);
       }
