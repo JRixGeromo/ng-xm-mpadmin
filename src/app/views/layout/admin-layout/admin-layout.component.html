@@ -1,9 +1,11 @@
-<div class="main-container">
+<div class="el-container is-vertical">
+  <app-header></app-header>
+  <section class="el-container main-container">
     <!-- <mat-toolbar color="primary" class="example-toolbar">
       <button mat-icon-button (click)="navbartoggler.toggle()"><mat-icon>menu</mat-icon></button>
       <h1 class="example-app-name">Responsive App</h1>
     </mat-toolbar> -->
-  
+    
     <mat-sidenav-container class="example-sidenav-container" hasBackdrop="false">
       <mat-sidenav #navbartoggler [mode]="mobileQuery.matches ? 'over' : 'side'" opened disableClose>
         <mat-nav-list>
@@ -16,6 +18,7 @@
         <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
-  </div>
+  </section>
+</div>
   
   

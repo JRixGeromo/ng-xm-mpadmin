@@ -23,6 +23,7 @@ import { SidebarNavMenuComponent } from './components/Layout/sidebar-nav-menu/si
 import { LogoutComponent } from './views/logout/logout.component';
 import { AdminLayoutComponent } from './views/layout/admin-layout/admin-layout.component';
 import { LoginLayoutComponent } from './views/layout/login-layout/login-layout.component';
+import { HeaderComponent } from './components/Layout/header/header.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoginLayoutComponent } from './views/layout/login-layout/login-layout.c
     SidebarNavMenuComponent,
     LogoutComponent,
     AdminLayoutComponent,
-    LoginLayoutComponent
+    LoginLayoutComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

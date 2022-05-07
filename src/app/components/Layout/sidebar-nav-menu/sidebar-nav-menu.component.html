@@ -1,6 +1,36 @@
 <div style="text-align:center; padding: 20px 0;">
     <span class="custom-menu-title">XMarketplace</span>
 </div>
-<nav *ngFor="let nav of menu; index as i;">
-    <a routerLink="{{nav.route}}" routerLinkActive="active">{{nav.name}}</a>
+<!-- <nav *ngFor="let nav of menu; index as i;">
+    <a routerLink="{{nav.route}}" routerLinkActive="active">
+        <li class="el-menu-item">
+            <i class="{{nav.icon}}"></i>
+            {{nav.name}}
+        </li>
+    </a>
+</nav> -->
+
+<nav>
+    <a routerLink="/" routerLinkActive="active">
+        <li class="el-menu-item">
+            <mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>
+            Dashboard
+        </li>
+        <li class="el-menu-item">
+            <mat-icon aria-hidden="false" aria-label="listings icon">listings</mat-icon>
+            Listings
+        </li>
+        <li class="el-menu-item">
+            <mat-icon aria-hidden="false" aria-label="shopping_cart icon">shopping_cart</mat-icon>
+            Transactions
+        </li>
+        <li class="el-menu-item">
+            <mat-icon aria-hidden="false" aria-label="perm_identity icon">perm_identity</mat-icon>
+            Users
+        </li>
+        <li class="el-menu-item">
+            <mat-icon aria-hidden="false" aria-label="settings icon">settings</mat-icon>
+            Settings
+        </li>
+    </a>
 </nav>
