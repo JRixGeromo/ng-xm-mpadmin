@@ -24,6 +24,10 @@ import { LogoutComponent } from './views/logout/logout.component';
 import { AdminLayoutComponent } from './views/layout/admin-layout/admin-layout.component';
 import { LoginLayoutComponent } from './views/layout/login-layout/login-layout.component';
 import { HeaderComponent } from './components/Layout/header/header.component';
+import { NewListingsComponent } from './components/Charts/new-listings/new-listings.component';
+import { PurchasesComponent } from './components/Charts/purchases/purchases.component';
+import { PaymentsComponent } from './components/Charts/payments/payments.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 
 @NgModule({
   declarations: [
@@ -34,10 +38,14 @@ import { HeaderComponent } from './components/Layout/header/header.component';
     LogoutComponent,
     AdminLayoutComponent,
     LoginLayoutComponent,
-    HeaderComponent
+    HeaderComponent,
+    NewListingsComponent,
+    PurchasesComponent,
+    PaymentsComponent
   ],
   imports: [
     BrowserModule,
+    NgApexchartsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSidenavModule,
