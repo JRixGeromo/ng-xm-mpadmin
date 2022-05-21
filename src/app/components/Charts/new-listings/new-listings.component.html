@@ -1,5 +1,5 @@
 <div>
-    <apx-chart
+    <apx-chart *ngIf="chartOptions && newListings"
       [series]="chartOptions.series"
       [chart]="chartOptions.chart"
       [dataLabels]="chartOptions.dataLabels"

@@ -1,4 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
+import { DatePipe } from '@angular/common';
+
 import {
   ApexAxisChartSeries,
   ApexChart,
@@ -10,7 +13,6 @@ import {
   ApexXAxis,
   ApexFill
 } from "ng-apexcharts";
-import { ProductService } from 'src/app/services/product.service';
 
 export type ChartOptions = {
   series: ApexAxisChartSeries;
@@ -35,84 +37,59 @@ export class NewListingsComponent implements OnInit {
 
   newListingsData: any;
   newListings: any;
+  dataLabels: Array<string | null> = [];
+  dataDatasetsData: Array<number> = [];
 
-  constructor(private productService: ProductService) {
-    this.newListingsData = productService.getNewlistingCharts();
-    console.log('newListingsData', this.newListingsData);
-    /* this.newListings = this.newListingsData.sort((a: any, b: any) => new Date (b.date) - new Date(a.date)); */
+  constructor(private productService: ProductService, private datePipe: DatePipe) {
+    this.productService.getNewlistingCharts().subscribe(data => {
+      this.newListingsData = data;
+      this.newListings = this.newListingsData.sort((a : any, b: any) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
+      this.newListings.forEach((element: any) => {
+        this.dataLabels.push(this.datePipe.transform(element.day, 'MM-dd'));
+        this.dataDatasetsData.push(element.value);
+      });
+    });
     this.chartOptions = {
-      series: [
-        {
-          name: "Inflation",
-          data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2]
-        }
-      ],
       chart: {
         /* height: 350, */
         type: "bar"
       },
+      colors: ['#F0890F'],
+      fill: {
+        type: ['gradient'],
+        gradient: {
+          shade: 'light',
+          type: 'vertical',
+          shadeIntensity: 0.25,
+          opacityFrom: 0.8,
+          opacityTo: 0.9,
+          stops: [0, 100],
+        },
+      },
+      xaxis: {
+        categories: this.dataLabels
+      },
       plotOptions: {
         bar: {
           dataLabels: {
-            position: "top" // top, center, bottom
-          }
-        }
+            position: 'top', // top, center, bottom
+          },
+        },
       },
       dataLabels: {
         enabled: true,
-        formatter: function(val: string) {
-          return val + "%";
-        },
         offsetY: -20,
         style: {
-          fontSize: "12px",
-          colors: ["#304758"]
-        }
-      },
-
-      xaxis: {
-        categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec"
-        ]
-      },
-      fill: {
-        type: "gradient",
-        gradient: {
-          shade: "light",
-          type: "horizontal",
-          shadeIntensity: 0.25,
-          gradientToColors: undefined,
-          inverseColors: true,
-          opacityFrom: 1,
-          opacityTo: 1,
-          stops: [50, 0, 100, 100]
-        }
-      },
-      yaxis: {
-        axisBorder: {
-          show: false
+          fontSize: '10px',
+          colors: ['#304758'],
         },
-        axisTicks: {
-          show: false
-        },
-        labels: {
-          show: true,
-          formatter: function(val: string) {
-            return val + "%";
-          }
-        }
       },
+      series: [
+        {
+          name: "New Listings",
+          data: this.dataDatasetsData
+        }
+      ],
     };
   }
 

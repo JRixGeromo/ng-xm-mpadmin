@@ -28,6 +28,7 @@ import { NewListingsComponent } from './components/Charts/new-listings/new-listi
 import { PurchasesComponent } from './components/Charts/purchases/purchases.component';
 import { PaymentsComponent } from './components/Charts/payments/payments.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,8 @@ import { NgApexchartsModule } from 'ng-apexcharts';
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 }},
-    CookieService
+    CookieService,
+    DatePipe
   ],
   bootstrap: [AppComponent]
 })
