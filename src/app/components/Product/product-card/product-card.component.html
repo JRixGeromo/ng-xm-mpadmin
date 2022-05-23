@@ -1,0 +1,18 @@
+<div class="product-card">
+    <div class="product-card-wrapper">
+        <div class="product-img-wrapper">
+            <img src="{{productDetail.images[0].productImageUrl}}" alt="product image" class="product-img">
+        </div>
+        <div style="text-align: left; line-height: 1.7" class="sub-label-light fs-16">
+            <div><span>{{productDetail.name}}</span></div>
+            <div *ngIf="productDetail.characters.length; else noLicense">
+                {{productDetail.characters[0].license.name}}, {{productDetail.scale}} Scale
+            </div>
+            <ng-template #noLicense></ng-template>
+        </div>
+        <div style="padding-bottom: 10px; text-align: right; line-height: 2.5" class="sub-header fs-16">
+            <div>SGD$ {{productDetail.listingPrice | number : '1.2-2'}}</div>
+        </div>
+    </div>
+</div>
+

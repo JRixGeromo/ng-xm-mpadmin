@@ -29,6 +29,9 @@ import { PurchasesComponent } from './components/Charts/purchases/purchases.comp
 import { PaymentsComponent } from './components/Charts/payments/payments.component';
 import { NgApexchartsModule } from 'ng-apexcharts';
 import { DatePipe } from '@angular/common';
+import { ProductCardComponent } from './components/Product/product-card/product-card.component';
+import { ProductCardLoaderComponent } from './components/Product/product-card-loader/product-card-loader.component';
+import { ProductCardTransactionComponent } from './components/Product/product-card-transaction/product-card-transaction.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { DatePipe } from '@angular/common';
     HeaderComponent,
     NewListingsComponent,
     PurchasesComponent,
-    PaymentsComponent
+    PaymentsComponent,
+    ProductCardComponent,
+    ProductCardLoaderComponent,
+    ProductCardTransactionComponent
   ],
   imports: [
     BrowserModule,

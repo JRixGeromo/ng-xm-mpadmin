@@ -13,4 +13,8 @@ export class ProductService {
     return this.http.get( this.apiService.MpApiIniBaseUrl + 'api/mp/product/v1/product/dashboard/newlistingcharts', this.apiService.SetAuthHeader());
   }
 
+  getProducts() {
+    return this.http.get( this.apiService.MpApiIniBaseUrl + 'api/mp/product/v1/products/admin', this.apiService.SetAuthHeader());
+  }
+
 }

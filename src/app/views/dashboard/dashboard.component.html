@@ -24,4 +24,19 @@
             </div>
         </div>
     </div>
+    <div class="el-row">
+        <div class="el-col el-col-xs-24">
+            <p class="sub-title">New Listings</p>
+        </div>
+    </div>
+    <div class="el-row">
+        <ng-template [ngIf]="products" [ngIfElse]="loading">
+            <div class="el-col el-col-6 el-col-xs-24 px-10" *ngFor="let product of products">
+                <app-product-card [productDetail]="product"></app-product-card>
+            </div>
+        </ng-template>
+        <ng-template #loading>
+            <app-product-card-loader></app-product-card-loader>
+        </ng-template>
+    </div>
 </div>
