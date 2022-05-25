@@ -1,38 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-// Your custom variables
-$mobile-view: 992px;
-// $font-family-roboto: 'Roboto', Helvetica, Arial, sans-serif;
-$font-family-montserrat: 'Montserrat';
-$font-family-prompt: 'Prompt';
-$form-border-radius: 50px;
-$--color-primary-bg: #ffffff;
-$--color-primary: #000000;
-$--color-secondary: #C4C4C4;
-$--font-size: 16px;
-$--font-style: normal;
-$--font-weight: 700;
-$--line-height: 29px;
-$--letter-spacing: 0em;
-$--text-align: center;
-
-.fs-12 {
-    font-size: 12px !important;
+.app {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #000000;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
 }
 
 .dashboard-container {
-    width: 100vw;
-    height: 100vh;
-  }
+  width: 100vw;
+  height: 100vh;
+}
   
-  .dashboard-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
+.dashboard-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
   
-  .dashboard-sidenav {
-    padding: 20px;
-  }
+.dashboard-sidenav {
+  padding: 20px;
+}
   

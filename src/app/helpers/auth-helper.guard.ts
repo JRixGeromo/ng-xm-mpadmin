@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, Router, RouterStateSnapshot } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { Observable } from 'rxjs';
 import { ConstantsService } from '../services/constants.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthHelperGuard implements CanActivate {
+export class AuthHelperGuard implements CanActivate, CanActivateChild {
 
   constructor(
     private cookieService: CookieService,
@@ -44,14 +43,17 @@ export class AuthHelperGuard implements CanActivate {
 
   canActivate(
     route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    state: RouterStateSnapshot): boolean {
       
-      console.log('authhelper', this.isLoggin());
       if (!this.isLoggin()) {
         this.router.navigate(['login']);
       }
 
       return this.isLoggin();
+  }
+
+  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    return this.canActivate(route, state);
   }
   
 }

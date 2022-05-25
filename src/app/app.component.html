@@ -1,6 +1,3 @@
 <div class="app">
-    <app-admin-layout *ngIf="checkIsLogin; else loginlayout"></app-admin-layout>
-    <ng-template #loginlayout>
-        <app-login-layout></app-login-layout>
-    </ng-template>
+    <router-outlet></router-outlet>
 </div>

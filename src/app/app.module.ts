@@ -17,12 +17,12 @@ import { MatSnackBarModule, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/mater
 import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 import { CookieService } from 'ngx-cookie-service';
 import { SidebarNavMenuComponent } from './components/Layout/sidebar-nav-menu/sidebar-nav-menu.component';
 import { LogoutComponent } from './views/logout/logout.component';
 import { AdminLayoutComponent } from './views/layout/admin-layout/admin-layout.component';
-import { LoginLayoutComponent } from './views/layout/login-layout/login-layout.component';
 import { HeaderComponent } from './components/Layout/header/header.component';
 import { NewListingsComponent } from './components/Charts/new-listings/new-listings.component';
 import { PurchasesComponent } from './components/Charts/purchases/purchases.component';
@@ -32,6 +32,7 @@ import { DatePipe } from '@angular/common';
 import { ProductCardComponent } from './components/Product/product-card/product-card.component';
 import { ProductCardLoaderComponent } from './components/Product/product-card-loader/product-card-loader.component';
 import { ProductCardTransactionComponent } from './components/Product/product-card-transaction/product-card-transaction.component';
+import { ListingsComponent } from './views/listings/listings/listings.component';
 
 @NgModule({
   declarations: [
@@ -41,14 +42,14 @@ import { ProductCardTransactionComponent } from './components/Product/product-ca
     SidebarNavMenuComponent,
     LogoutComponent,
     AdminLayoutComponent,
-    LoginLayoutComponent,
     HeaderComponent,
     NewListingsComponent,
     PurchasesComponent,
     PaymentsComponent,
     ProductCardComponent,
     ProductCardLoaderComponent,
-    ProductCardTransactionComponent
+    ProductCardTransactionComponent,
+    ListingsComponent
   ],
   imports: [
     BrowserModule,
@@ -66,6 +67,7 @@ import { ProductCardTransactionComponent } from './components/Product/product-ca
     HttpClientModule,
     MatToolbarModule,
     MatListModule,
+    MatPaginatorModule,
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 }},

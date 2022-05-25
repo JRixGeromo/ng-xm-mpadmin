@@ -1,0 +1,30 @@
+.searchStyle {
+    border: 0px solid #fff !important;
+    max-width: 70% !important;
+}
+
+input, select {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+input, select, .country-select, textarea {
+    padding: 18px;
+    width: 100%;
+    font-size: 20px !important;
+    color: #000 !important;
+    border-radius: 5px !important;
+    border: 1px solid #0000003b !important;
+    font-family: "Prompt";
+}
+
+.d-flex-end {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.py-10 {
+    padding: 10px 0;
+}

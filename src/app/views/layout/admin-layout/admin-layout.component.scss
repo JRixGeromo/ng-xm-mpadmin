@@ -6,7 +6,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-  }
+}
   
   .example-is-mobile .example-toolbar {
     position: fixed;
@@ -37,6 +37,10 @@
     }
   }
 
+  mat-sidenav-content {
+    background-color: #fff;
+  }
+
 .el-container {
   display: flex;
   -webkit-box-flex: 1;
@@ -50,6 +54,10 @@
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
+}
+
+.main-container {
+  height: 100%;
 }
 
 mat-sidenav-content {

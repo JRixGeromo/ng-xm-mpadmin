@@ -16,7 +16,6 @@ export class NonAuthenticatedGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      console.log('non-authhelper', this.authHelper.isLoggin());
       if(this.authHelper.isLoggin()) {
         this.router.navigate(['/']);
         return false;
