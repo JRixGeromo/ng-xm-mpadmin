@@ -23,28 +23,21 @@
     </div>
     <div class="el-row py-10">
         <div class="el-col el-col-24 d-flex-end">
-            <mat-paginator [length]="100"
-              [pageSize]="10"
-              aria-label="Select page">
+            <mat-paginator 
+                [length]="pagination.totalRecord"
+                [pageSize]="pagination.itemPerPage"
+                aria-label="Select page">
             </mat-paginator>
         </div>
     </div>
     <div class="el-row">
-        <ng-template [ngIf]="products" [ngIfElse]="loading">
-            <div class="el-col el-col-6 el-col-xs-24 px-10" *ngFor="let product of products">
+        <ng-template [ngIf]="dataList" [ngIfElse]="loading">
+            <div class="el-col el-col-sm-8 el-col-xs-24 px-10" *ngFor="let product of dataList">
                 <app-product-card [productDetail]="product"></app-product-card>
             </div>
         </ng-template>
         <ng-template #loading>
             <app-product-card-loader></app-product-card-loader>
         </ng-template>
-    </div>
-    <div class="el-row py-10">
-        <div class="el-col el-col-24 d-flex-end">
-            <mat-paginator [length]="100"
-              [pageSize]="10"
-              aria-label="Select page">
-            </mat-paginator>
-        </div>
     </div>
 </div>

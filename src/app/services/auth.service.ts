@@ -23,4 +23,13 @@ export class AuthService {
       return this.http.post( this.apiService.ApiIniBaseUrl + '/api/user/v1/session/terminate', null, this.apiService.SetAuthHeader());
   }
 
+  setSuperAdminHeader() {
+    const superAdmin = {
+      userName: environment.ANG_APP_USER_NAME,
+      secret: environment.ANG_APP_SECRET,
+      applicationDomain: environment.ANG_APP_APPLICATION_DOMAIN,
+    };
+    return this.http.post( this.apiService.ApiIniBaseUrl + '/api/user/v1/auth', superAdmin);
+  }
+
 }

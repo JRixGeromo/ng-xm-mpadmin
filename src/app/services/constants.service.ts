@@ -42,5 +42,13 @@ export class ConstantsService {
     },
   ];
 
+  CONFIGURATION_NAMES = {
+    productSeries: 'Product Series',
+    productCharacters: 'Product Characters',
+    productScale: 'Product Scale',
+    productLicense: 'Product License',
+    productDistributors: 'Product Distributors',
+  };
+
   constructor() { }
 }

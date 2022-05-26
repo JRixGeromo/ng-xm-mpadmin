@@ -166,4 +166,11 @@ body {
   .hidden-sm-and-up {
       display: none !important;
   }
+  .el-col-sm-8 {
+    display: block;
+    max-width: 33.3333333333%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.3333333333%;
+    flex: 0 0 33.3333333333%;
+  }
 }
