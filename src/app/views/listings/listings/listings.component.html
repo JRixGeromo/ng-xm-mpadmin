@@ -10,15 +10,15 @@
             <span><input class="searchStyle"></span>
         </div>
         <div class="el-col el-col-4 el-col-offset-8 d-flex-end">
-            SortBy
+            <app-sort-by (getSortBy)="getSortBy($event)"></app-sort-by>
         </div>
     </div>
     <div class="el-row" style="text-align: center; margin: 20px 0 40px 0; padding: 0 10px;">
         <div class="el-col el-col-24 el-col-xs-12">
-            CustomTab
+            <app-custom-tab [tabs]="tabOptions" (getTabLicense)="getTabLicense($event)"></app-custom-tab>
         </div>
         <div class="el-col el-col-12 d-flex-end hidden-sm-and-up">
-            SortBy
+            <app-sort-by (getSortBy)="getSortBy($event)"></app-sort-by>
         </div>
     </div>
     <div class="el-row py-10">
@@ -26,6 +26,8 @@
             <mat-paginator 
                 [length]="pagination.totalRecord"
                 [pageSize]="pagination.itemPerPage"
+                [pageIndex]="pagination.currentPage"
+                (page)="onChangePage($event)"
                 aria-label="Select page">
             </mat-paginator>
         </div>

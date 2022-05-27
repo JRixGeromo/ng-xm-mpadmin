@@ -1,0 +1,10 @@
+<div class="custom-select">
+    <mat-form-field>
+        <mat-label>Sort By</mat-label>
+        <mat-select [(ngModel)]="sortBy" (selectionChange)="getSortBy.emit(sortBy)">
+            <mat-option *ngFor="let sort of sortOptions" [value]="sort.label">
+            {{sort.label}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>

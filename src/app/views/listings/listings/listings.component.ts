@@ -28,16 +28,11 @@ export class ListingsComponent implements OnInit {
     private productService: ProductService, 
     private configurationService: ConfigurationService,
     private constantsService: ConstantsService,
-  ) {
-    
-    this.getProducts();
-    this.getLicenses();
- }
+  ) {}
 
   ngOnInit(): void {
-    /* if (this.paginationTimeout.length > 0) {
-      clearTimeout(this.paginationTimeout.values);
-    } */
+    this.getProducts();
+    this.getLicenses();
   }
 
   getLicenses() {
@@ -95,10 +90,10 @@ export class ListingsComponent implements OnInit {
 
   getTabLicense(tab: any) {
     if (tab === 'all') {
-      this.listings = this.listingRes.data;
+      this.listings = this.listingRes;
       this.dataList = this.listings;
     } else {
-      this.listings = this.listingRes.data.filter((x: any) => x.characters.some((y: any) => y.license.name.toLowerCase() === tab));
+      this.listings = this.listingRes.filter((x: any) => x.characters.some((y: any) => y.license.name.toLowerCase() === tab));
       this.dataList = this.listings;
     }
     this.paginationCallback(1);
@@ -125,5 +120,13 @@ export class ListingsComponent implements OnInit {
     this.dataList = this.keyWord ?
     this.listings.filter((x: any) => x.name.toLowerCase().includes(this.keyWord.toLowerCase())) : this.listings;
   };
+
+  onChangePage(pe:PageEvent) {
+    /* console.log('pageIndex', pe.pageIndex);
+    console.log('pageSize', pe.pageSize); */
+    pe.pageIndex++;
+    this.pagination.currentPage = pe.pageIndex;
+    this.paginationCallback(this.pagination.currentPage);
+  }
 
 }

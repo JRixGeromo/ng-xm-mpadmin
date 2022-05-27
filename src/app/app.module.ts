@@ -9,7 +9,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -33,6 +33,10 @@ import { ProductCardComponent } from './components/Product/product-card/product-
 import { ProductCardLoaderComponent } from './components/Product/product-card-loader/product-card-loader.component';
 import { ProductCardTransactionComponent } from './components/Product/product-card-transaction/product-card-transaction.component';
 import { ListingsComponent } from './views/listings/listings/listings.component';
+import { SortByComponent } from './components/sort-by/sort-by.component';
+import { FilterComponent } from './components/filter/filter.component';
+import { CustomTabComponent } from './components/custom-tab/custom-tab.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -49,7 +53,10 @@ import { ListingsComponent } from './views/listings/listings/listings.component'
     ProductCardComponent,
     ProductCardLoaderComponent,
     ProductCardTransactionComponent,
-    ListingsComponent
+    ListingsComponent,
+    SortByComponent,
+    FilterComponent,
+    CustomTabComponent
   ],
   imports: [
     BrowserModule,
@@ -68,6 +75,8 @@ import { ListingsComponent } from './views/listings/listings/listings.component'
     MatToolbarModule,
     MatListModule,
     MatPaginatorModule,
+    FormsModule,
+    MatTabsModule,
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 }},
