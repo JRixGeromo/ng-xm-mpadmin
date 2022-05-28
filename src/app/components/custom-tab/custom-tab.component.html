@@ -1,5 +1,7 @@
-<div class="custom-tab hidden-xs-only">
-    <div class="tab-item" *ngFor="let tab of tabs">
-      <div>{{ tab.tabLabel }}</div>
-    </div>
-</div>
+<mat-tab-group mat-align-tabs="center" animationDuration="0ms" (selectedTabChange)="getTabLicense.emit($event.tab.textLabel.toLowerCase())"> 
+  <div *ngFor="let tab of tabs">
+    <mat-tab 
+      label="{{tab.tabLabel}}"
+    ></mat-tab>
+  </div>
+</mat-tab-group>

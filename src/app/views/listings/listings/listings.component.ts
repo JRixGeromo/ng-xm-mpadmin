@@ -53,7 +53,6 @@ export class ListingsComponent implements OnInit {
   };
 
   slicePage(params: any) {
-    this.listings = this.listingRes;
     const paginationDetails = {
       itemPerPage: params.itemPerPage,
       totalRecord: this.listings.length,
@@ -89,6 +88,7 @@ export class ListingsComponent implements OnInit {
   };
 
   getTabLicense(tab: any) {
+    this.activeTabName = tab;
     if (tab === 'all') {
       this.listings = this.listingRes;
       this.dataList = this.listings;
@@ -122,8 +122,6 @@ export class ListingsComponent implements OnInit {
   };
 
   onChangePage(pe:PageEvent) {
-    /* console.log('pageIndex', pe.pageIndex);
-    console.log('pageSize', pe.pageSize); */
     pe.pageIndex++;
     this.pagination.currentPage = pe.pageIndex;
     this.paginationCallback(this.pagination.currentPage);

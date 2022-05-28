@@ -7,7 +7,7 @@
     <div class="el-row hidden-xs-only">
         <div class="el-col el-col-12">
             <span><mat-icon aria-hidden="false" aria-label="search icon">search</mat-icon></span>
-            <span><input class="searchStyle"></span>
+            <span><input class="searchStyle" [(ngModel)]="keyWord" (input)="searchThis()"></span>
         </div>
         <div class="el-col el-col-4 el-col-offset-8 d-flex-end">
             <app-sort-by (getSortBy)="getSortBy($event)"></app-sort-by>
@@ -15,7 +15,10 @@
     </div>
     <div class="el-row" style="text-align: center; margin: 20px 0 40px 0; padding: 0 10px;">
         <div class="el-col el-col-24 el-col-xs-12">
-            <app-custom-tab [tabs]="tabOptions" (getTabLicense)="getTabLicense($event)"></app-custom-tab>
+            <app-custom-tab 
+                [tabs]="tabOptions" 
+                (getTabLicense)="getTabLicense($event)"
+            ></app-custom-tab>
         </div>
         <div class="el-col el-col-12 d-flex-end hidden-sm-and-up">
             <app-sort-by (getSortBy)="getSortBy($event)"></app-sort-by>

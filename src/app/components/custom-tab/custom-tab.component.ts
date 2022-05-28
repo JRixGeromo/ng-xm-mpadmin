@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-custom-tab',
@@ -8,6 +8,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export class CustomTabComponent implements OnInit {
 
   @Input() tabs: any;
+  @Output('getTabLicense') getTabLicense: EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
