@@ -7,6 +7,7 @@ import { AdminLayoutComponent } from './views/layout/admin-layout/admin-layout.c
 import { ListingsComponent } from './views/listings/listings/listings.component';
 import { LoginComponent } from './views/login/login.component';
 import { LogoutComponent } from './views/logout/logout.component';
+import { TransactionsComponent } from './views/transactions/transactions.component';
 
 const routes: Routes = [
   { 
@@ -29,6 +30,7 @@ const routes: Routes = [
         canActivateChild: [AuthHelperGuard],
         children: [
           { path: 'listings', component: ListingsComponent },
+          { path: 'transactions', component: TransactionsComponent },
           { path: '', component: DashboardComponent }
         ]
       }

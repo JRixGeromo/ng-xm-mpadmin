@@ -17,4 +17,8 @@ export class ProductService {
     return this.http.get( this.apiService.MpApiIniBaseUrl + 'api/mp/product/v1/products/admin', this.apiService.SetAuthHeader());
   }
 
+  getProductById(productId: any) {
+    return this.http.get( this.apiService.MpApiIniBaseUrl + `api/mp/product/v1/${productId}/product` );
+  }
+
 }

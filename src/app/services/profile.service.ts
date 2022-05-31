@@ -10,7 +10,7 @@ export class ProfileService {
   constructor(private http: HttpClient, private apiService: ApiService) { }
 
   getProfilebyUserId(userId: string) {
-    return this.http.get(`/api/mp/profile/v1/${userId}/profile/user`);
+    return this.http.get(this.apiService.MpApiIniBaseUrl + `api/mp/profile/v1/${userId}/profile/user`);
   }
 
 }

@@ -1,0 +1,43 @@
+<div class="payment-card">
+    <ng-template [ngIf]="transactionProduct && transactionBuyer && transactionSeller">
+        <div class="el-row">
+            <div class="el-col el-col-6 el-col-xs-12">
+                <div class="product-img-wrapper d-flex-column">
+                    <div class="hidden-sm-and-down">{{ transactionDetail.createdDate | date:'short' }}</div>
+                    <img class="product-img" src="{{transactionProduct.images[0].productImageUrl}}" />
+                </div>
+            </div>
+            <div class="el-col el-col-6 px-10 hidden-sm-and-down">
+                <div style="text-align: left; line-height: 1.7; justify-content: space-between;"
+                    class="sub-label-light fs-16 d-flex-column h-100"
+                >
+                    <div>
+                        <div title="{{transactionProduct.productId}}">{{ transactionProduct.name }}</div>
+                        <div>
+                            {{ transactionProduct.series.license.name }}, {{ transactionProduct.scale }} Scale
+                        </div>
+                    </div>
+                    <div class="font-bold fm-montserrat">
+                        SGD${{ transactionProduct.listingPrice | number : '1.2-2'}}
+                    </div>
+                </div>
+            </div>
+            <div class="el-col el-col-6 el-col-xs-12">
+                <div style="text-align: left; line-height: 1.7;"
+                    class="sub-label-light fs-16 d-flex-column h-100 d-justify-content"
+                >
+                    <div class="d-flex hidden-sm-and-down">
+                        <div class="px-10">
+                            <div class="font-bold">Seller</div>
+                            <div>{{transactionSeller.userName}}</div>
+                        </div>
+                        <div class="px-10">
+                            <div class="font-bold">Buyer</div>
+                            <div>{{transactionBuyer.userName}}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</div>

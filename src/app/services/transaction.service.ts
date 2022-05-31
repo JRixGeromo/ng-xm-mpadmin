@@ -17,4 +17,8 @@ export class TransactionService {
     return this.http.get( this.apiService.MpApiIniBaseUrl + 'api/mp/transaction/v1/transaction/dashboard/payments', this.apiService.SetAuthHeader());
   }
 
+  getTransactions() {
+    return this.http.get( this.apiService.MpApiIniBaseUrl + 'api/mp/transaction/v1/transactions', this.apiService.SetAuthHeader());
+  }
+
 }

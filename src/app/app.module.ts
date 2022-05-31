@@ -37,6 +37,8 @@ import { SortByComponent } from './components/sort-by/sort-by.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { CustomTabComponent } from './components/custom-tab/custom-tab.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { TransactionsComponent } from './views/transactions/transactions.component';
+import { TransactionCardComponent } from './components/Transaction/transaction-card/transaction-card.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { MatTabsModule } from '@angular/material/tabs';
     ListingsComponent,
     SortByComponent,
     FilterComponent,
-    CustomTabComponent
+    CustomTabComponent,
+    TransactionsComponent,
+    TransactionCardComponent
   ],
   imports: [
     BrowserModule,

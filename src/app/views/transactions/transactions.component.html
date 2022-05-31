@@ -1,0 +1,42 @@
+<div class="px-40">
+    <div class="el-row hidden-xs-only">
+        <div class="el-col el-col-24">
+            <h2 class="main-title">Transactions</h2>
+        </div>
+    </div>
+    <div class="el-row hidden-xs-only">
+        <div class="el-col el-col-24">
+            <span><mat-icon aria-hidden="false" aria-label="search icon">search</mat-icon></span>
+            <span><input class="searchStyle" [(ngModel)]="keyWord" (input)="searchThis()"></span>
+        </div>
+    </div>
+    <div class="el-row hidden-xs-only">
+        <div class="el-col el-col-4 d-flex-start">
+            <app-filter></app-filter>
+        </div>
+        <div class="el-col el-col-4 el-col-offset-16 d-flex-end">
+            <app-sort-by (getSortBy)="getSortBy($event)"></app-sort-by>
+        </div>
+    </div>
+    <div class="el-row py-10">
+        <div class="el-col el-col-24 d-flex-end">
+            <mat-paginator 
+                [length]="pagination.totalRecord"
+                [pageSize]="pagination.itemPerPage"
+                [pageIndex]="pagination.currentPage"
+                (page)="onChangePage($event)"
+                aria-label="Select page">
+            </mat-paginator>
+        </div>
+    </div>
+    <div class="el-row">
+        <ng-template [ngIf]="dataList">
+            <div class="el-col el-col-xs-24 el-col-sm-24" *ngFor="let transaction of dataList">
+                <div style="padding: 20px; border: 1px solid #C4C4C4; margin-bottom: 10px;">
+                    <!-- <app-product-card [productDetail]="product"></app-product-card> -->
+                    <app-transaction-card [transactionDetail]="transaction"></app-transaction-card>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>
