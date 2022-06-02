@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
 
 import { CookieService } from 'ngx-cookie-service';
 import { SidebarNavMenuComponent } from './components/Layout/sidebar-nav-menu/sidebar-nav-menu.component';
@@ -81,6 +83,8 @@ import { TransactionCardComponent } from './components/Transaction/transaction-c
     MatPaginatorModule,
     FormsModule,
     MatTabsModule,
+    MatMenuModule,
+    MatRadioModule,
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 }},

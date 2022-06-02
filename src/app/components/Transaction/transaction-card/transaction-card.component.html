@@ -3,7 +3,8 @@
         <div class="el-row">
             <div class="el-col el-col-6 el-col-xs-12">
                 <div class="product-img-wrapper d-flex-column">
-                    <div class="hidden-sm-and-down">{{ transactionDetail.createdDate | date:'short' }}</div>
+                    <!-- <div class="hidden-sm-and-down">{{ transactionDetail.createdDate | date:'short' }}</div> -->
+                    <div class="hidden-sm-and-down">#23045D1234567890123</div>
                     <img class="product-img" src="{{transactionProduct.images[0].productImageUrl}}" />
                 </div>
             </div>
@@ -36,6 +37,55 @@
                             <div>{{transactionBuyer.userName}}</div>
                         </div>
                     </div>
+                    <div class="d-flex hidden-sm-and-up">
+                        <div class="px-10 fs-12">
+                            <div class="font-bold">Seller</div>
+                            <div>{{transactionSeller.userName}}</div>
+                        </div>
+                        <div class="px-10 fs-12">
+                            <div class="font-bold">Buyer</div>
+                            <div>{{transactionBuyer.userName}}</div>
+                        </div>
+                    </div>
+                    <div class="px-10 hidden-sm-and-down">
+                        <div class="font-bold fs-20 font-m">Status</div>
+                        <div>{{ transactionStatus }}</div>
+                    </div>
+                    <div class="px-10 hidden-sm-and-down">
+                        <div>{{ transactionDetail.paymentDate | date:'short' }}</div>
+                      </div>
+                </div>
+            </div>
+            <div class="el-col el-col-12 hidden-sm-and-up">
+                <div style="text-align: left; line-height: 1.7;"
+                    class="sub-label-light fs-12 d-flex-column h-100"
+                >
+                    <div class="d-flex">
+                        <div>
+                            <div>{{ transactionProduct.name }}</div>
+                            <div>{{ transactionProduct.series.license.name }}, {{ transactionProduct.scale }} Scale</div>
+                            <div class="font-bold fm-montserrat fs-16">SGD${{ transactionProduct.listingPrice | number : '1.2-2' }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="el-col el-col-12 px-10 hidden-sm-and-up">
+                <div style="text-align: left; line-height: 1.7; justify-content: space-around; "
+                    class="sub-label-light fs-16 d-flex-column h-100"
+                >
+                    <div class="d-flex">
+                        <div>
+                            <div class="font-bold fs-16 font-m">Status</div>
+                            <div class="fs-12">{{ transactionStatus }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="el-col el-col-6 el-col-xs-24 py-10" style="align-self: center;">
+                <div style="line-height: 1.7; text-align: center;"
+                    class="sub-label-light fs-16"
+                >
+                    <button class="font-bold payment-v-button custom-btn">VIEW</button>
                 </div>
             </div>
         </div>

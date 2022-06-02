@@ -1,1 +1,46 @@
-<p>filter works!</p>
+<div [matMenuTriggerFor]="filterMenu" id="filter-bar" class="fs-16">Filter 
+    <mat-icon aria-hidden="false" aria-label="add icon">add</mat-icon>
+    <mat-menu #filterMenu="matMenu">
+        <mat-radio-group
+            aria-labelledby="example-radio-group-label"
+            class="example-radio-group"
+            [(ngModel)]="activeStatus"
+            (ngModelChange)="newActiveStatus.emit(activeStatus)"
+        >
+        <p style="font-weight: bold; margin-bottom: 0px" class="fs-16">Status</p>
+        <div class="font-m fs-14">
+            <mat-radio-button class="example-radio-button" style="padding-top:5px;" value="all">
+                All
+            </mat-radio-button>
+            <br>
+            <mat-radio-button class="example-radio-button font-m" value="pending_payment" style="padding:10px 0;">
+                Pending Payment
+            </mat-radio-button>
+            <mat-radio-button class="example-radio-button font-m" value="completed_payment" style="padding:10px 0;">
+                Completed Payment
+            </mat-radio-button>
+            <mat-radio-button class="example-radio-button font-m" value="failed_payment" style="padding:10px 0;">
+                Failed Payment
+            </mat-radio-button>
+            <mat-radio-button class="example-radio-button font-m" value="item_ship_out" style="padding:10px 0;">
+                Item Ship Out
+            </mat-radio-button>
+            <mat-radio-button class="example-radio-button font-m" value="item_received" style="padding:10px 0;">
+                Item Received
+            </mat-radio-button>
+            <mat-radio-button class="example-radio-button font-m" value="pending_payout" style="padding:10px 0;">
+                Pending Payout
+            </mat-radio-button>
+            <mat-radio-button class="example-radio-button font-m" value="payout_released" style="padding:10px 0;">
+                Payout Released
+            </mat-radio-button>
+            <mat-radio-button class="example-radio-button font-m" value="payout_rejected" style="padding:10px 0;">
+                Payout Rejected
+            </mat-radio-button>
+            <mat-radio-button class="example-radio-button font-m" value="payout_failed" style="padding:10px 0;">
+                Payout Failed
+            </mat-radio-button>
+        </div>
+        </mat-radio-group>
+    </mat-menu>
+</div>

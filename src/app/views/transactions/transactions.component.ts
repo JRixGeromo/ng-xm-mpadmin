@@ -109,6 +109,9 @@ export class TransactionsComponent implements OnInit {
   };
 
   searchThis() {
+    this.transactionsList = this.transactionsList.filter((element: any) => {
+      return element.name !== null;
+    });
     this.dataList = this.keyWord ?
     this.transactionsList.filter((x: any) => x.name.toLowerCase().includes(this.keyWord.toLowerCase())) : this.transactionsList;
   };

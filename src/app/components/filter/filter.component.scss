@@ -1,0 +1,24 @@
+#filter-bar {
+    display:inline-block;
+    padding:10px;
+}
+
+#filter-bar:hover {
+    cursor:hand;
+    cursor:pointer;
+}
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    align-items: flex-start;
+  }
+  
+.example-radio-button {
+   color: #000;
+}
+
+mat-radio-group {
+    padding: 0 30px;
+}

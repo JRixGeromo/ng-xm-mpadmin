@@ -73,12 +73,24 @@ body {
     font-size: 12px !important;
 }
 
+.fs-14 {
+  font-size: 14px !important;
+}
+
 .fs-16 {
   font-size: 16px !important;
 }
 
+.fs-20 {
+  font-size: 20px !important;
+}
+
 .font-bold {
   font-weight: bold !important;
+}
+
+.font-m {
+  font-family: $font-family-montserrat;
 }
 
 [class*=el-col-] {
@@ -93,6 +105,10 @@ body {
 
 .px-40 {
   padding: 0 40px !important;
+}
+
+.py-4 {
+  padding: 4px 0 !important;
 }
 
 .d-flex {

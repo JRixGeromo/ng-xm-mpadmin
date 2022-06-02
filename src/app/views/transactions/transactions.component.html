@@ -12,7 +12,7 @@
     </div>
     <div class="el-row hidden-xs-only">
         <div class="el-col el-col-4 d-flex-start">
-            <app-filter></app-filter>
+            <app-filter (newActiveStatus)="newActiveStatus($event)"></app-filter>
         </div>
         <div class="el-col el-col-4 el-col-offset-16 d-flex-end">
             <app-sort-by (getSortBy)="getSortBy($event)"></app-sort-by>
