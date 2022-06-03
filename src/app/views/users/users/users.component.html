@@ -1,0 +1,52 @@
+<div class="px-40">
+    <div class="el-row hidden-xs-only">
+        <div class="el-col el-col-24">
+            <h2 class="main-title">Users</h2>
+        </div>
+    </div>
+    <div class="el-row hidden-xs-only">
+        <div class="el-col el-col-12">
+            <span><mat-icon aria-hidden="false" aria-label="search icon">search</mat-icon></span>
+            <span><input class="searchStyle" [(ngModel)]="keyWord" (input)="searchThis()"></span>
+        </div>
+        <div class="el-col el-col-4 el-col-offset-8 d-flex-end">
+            <app-sort-by (getSortBy)="getSortBy($event)"></app-sort-by>
+        </div>
+    </div>
+    <div class="el-row py-10">
+        <div class="el-col el-col-24 d-flex-end">
+            <mat-paginator 
+                [length]="pagination.totalRecord"
+                [pageSize]="pagination.itemPerPage"
+                [pageIndex]="pagination.currentPage"
+                (page)="onChangePage($event)"
+                aria-label="Select page">
+            </mat-paginator>
+        </div>
+    </div>
+    <div class="el-row" style="margin: 40px 0;">
+        <ng-template [ngIf]="dataList">
+            <div class="el-col el-col-6 el-col-xs-24 el-col-sm-6" *ngFor="let profile of dataList">
+                <div class="profile-container">
+                    <div>
+                        <div *ngIf="profile.displayPhotoFilePath; else profileError">
+                            <div class="el-image profile-img " style="width: 100px; height: 100px">
+                                <img src="{{profile.displayPhotoFilePath}}" alt="user profile" 
+                                    class="el-image__inner"
+                                    style="object-fit: cover;">
+                            </div>
+                        </div>
+                        <ng-template #profileError>
+                            <div class="el-image profile-img " style="width: 100px; height: 100px">
+                                <img src="{{defaultProfileImg}}" alt="default profile" 
+                                    class="el-image__inner"
+                                    style="object-fit: cover;">
+                            </div>
+                        </ng-template>
+                    </div>
+                    <div class="user-name">{{ profile.userName }}</div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</div>

@@ -13,4 +13,8 @@ export class ProfileService {
     return this.http.get(this.apiService.MpApiIniBaseUrl + `api/mp/profile/v1/${userId}/profile/user`);
   }
 
+  retreiveProfiles() {
+    return this.http.get(this.apiService.MpApiIniBaseUrl + 'api/mp/profile/v1/profiles');
+  }
+
 }

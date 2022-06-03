@@ -20,6 +20,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatCardModule } from '@angular/material/card';
 
 import { CookieService } from 'ngx-cookie-service';
 import { SidebarNavMenuComponent } from './components/Layout/sidebar-nav-menu/sidebar-nav-menu.component';
@@ -41,6 +42,8 @@ import { CustomTabComponent } from './components/custom-tab/custom-tab.component
 import { MatTabsModule } from '@angular/material/tabs';
 import { TransactionsComponent } from './views/transactions/transactions.component';
 import { TransactionCardComponent } from './components/Transaction/transaction-card/transaction-card.component';
+import { UsersComponent } from './views/users/users/users.component';
+import { SettingsComponent } from './views/settings/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,9 @@ import { TransactionCardComponent } from './components/Transaction/transaction-c
     FilterComponent,
     CustomTabComponent,
     TransactionsComponent,
-    TransactionCardComponent
+    TransactionCardComponent,
+    UsersComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -85,6 +90,7 @@ import { TransactionCardComponent } from './components/Transaction/transaction-c
     MatTabsModule,
     MatMenuModule,
     MatRadioModule,
+    MatCardModule,
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 }},
