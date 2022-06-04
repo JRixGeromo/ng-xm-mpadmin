@@ -1,0 +1,29 @@
+input {
+    padding: 10px;
+    font-size: 14px !important;
+    width: 100px !important;
+  }
+
+  .discard-btn {
+    background-color: #fff !important;
+    color: #575757 !important;
+    border-color: #575757 !important;
+    &:hover,
+    &:active {
+      background-color: #575757;
+      color: #575757 !important;
+      border-color: #575757 !important;
+      }
+  }
+  
+  .save-btn {
+    background-color: #575757 !important;
+    color: #fff !important;
+    border-color: #575757 !important;
+    &:hover,
+    &:active {
+      background-color: #575757;
+      color: #fff !important;
+      border-color: #575757 !important;
+      }
+  }

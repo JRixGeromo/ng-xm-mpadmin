@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SettingsComponent implements OnInit {
 
+  logoPanel = false;
+  paymentPanel = false;
+  comissionPanel = false;
+  binance = false;
+  enjin = false;
+  trustWallet = false;
+
   constructor() { }
 
   ngOnInit(): void {

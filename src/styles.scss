@@ -120,6 +120,11 @@ body {
   flex-direction: column !important;
 }
 
+.d-flex-center {
+  display: flex !important;
+  align-items: center !important;
+}
+
 .d-justify-content {
   justify-content: space-around !important;
   @media only screen and (max-width: 768px) {
@@ -203,6 +208,38 @@ body {
   font-weight: 700 !important;
   font-family: $font-family-montserrat !important;
   font-size: 20px !important;
+}
+
+// Custom Button
+.custom-btn {
+  font-family   : $font-family-montserrat !important;
+  font-style    : normal !important;
+  font-weight   : bold !important;
+  font-size     : 16px !important;
+  text-transform: uppercase !important;
+  padding       : 8px 22px !important;
+  min-height    : 36px !important;
+  white-space   : unset !important;
+
+  &.is-disabled {
+    opacity: 0.6 !important;
+  }
+}
+
+/* mobile center */
+.mobile-center {
+  @media only screen and (max-width: 768px) {
+    display: flex !important;
+    justify-content: center !important;
+  }
+}
+
+/* Menu Title */
+.custom-menu-title {
+  background-color: $--color-secondary !important;
+  font-family: $font-family-montserrat !important;
+  font-weight: 700 !important;
+  font-size: 24px !important;
 }
 
 @media only screen and (max-width: 992px) {

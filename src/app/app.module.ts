@@ -21,6 +21,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { CookieService } from 'ngx-cookie-service';
 import { SidebarNavMenuComponent } from './components/Layout/sidebar-nav-menu/sidebar-nav-menu.component';
@@ -91,6 +93,8 @@ import { SettingsComponent } from './views/settings/settings/settings.component'
     MatMenuModule,
     MatRadioModule,
     MatCardModule,
+    MatExpansionModule,
+    MatCheckboxModule,
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 }},

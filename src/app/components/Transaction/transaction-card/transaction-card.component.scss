@@ -32,6 +32,16 @@
 
 
 
-
+  .payment-v-button {
+    color: #000;
+    border: 1px solid #575757;
+    &:focus,
+    &:hover,
+    &:active {
+      background-color: #fff !important;
+      color: #000 !important;
+      border-color: #575757 !important;
+      }
+    }
 
 
