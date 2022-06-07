@@ -38,7 +38,9 @@
     <div class="el-row">
         <ng-template [ngIf]="dataList" [ngIfElse]="loading">
             <div class="el-col el-col-sm-8 el-col-xs-24 px-10" *ngFor="let product of dataList">
-                <app-product-card [productDetail]="product"></app-product-card>
+                <a [routerLink]="['/product', product.productId]">
+                    <app-product-card [productDetail]="product"></app-product-card>
+                </a>
             </div>
         </ng-template>
         <ng-template #loading>

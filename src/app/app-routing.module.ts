@@ -5,6 +5,7 @@ import { NonAuthenticatedGuard } from './helpers/non-authenticated.guard';
 import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AdminLayoutComponent } from './views/layout/admin-layout/admin-layout.component';
 import { ListingsComponent } from './views/listings/listings/listings.component';
+import { ProductDetailComponent } from './views/listings/product-detail/product-detail.component';
 import { LoginComponent } from './views/login/login.component';
 import { LogoutComponent } from './views/logout/logout.component';
 import { SettingsComponent } from './views/settings/settings/settings.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
         canActivateChild: [AuthHelperGuard],
         children: [
           { path: 'listings', component: ListingsComponent },
+          { path: 'product/:id', component: ProductDetailComponent },
           { path: 'transactions', component: TransactionsComponent },
           { path: 'users', component: UsersComponent },
           { path: 'settings', component: SettingsComponent },

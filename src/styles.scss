@@ -56,6 +56,11 @@ $--line-height: 29px;
 $--letter-spacing: 0em;
 $--text-align: center;
 
+a {
+  text-decoration: unset !important;
+  color: initial !important;
+}
+
 body {
   margin     : 0 !important;
   padding    : 0 !important;
@@ -190,6 +195,10 @@ body {
   flex: 0 0 100% !important;
 }
 
+.el-col-offset-1 {
+  margin-left: 4.1666666667% !important;
+}
+
 .el-col-offset-8 {
   margin-left: 33.3333333333% !important;
 }
@@ -250,6 +259,9 @@ body {
 
 
 @media only screen and (max-width: 768px) {
+  .el-col-xs-offset-0 {
+    margin-left: 0 !important;
+  }
   .el-col-xs-12 {
     display: block !important;
     max-width: 50% !important;

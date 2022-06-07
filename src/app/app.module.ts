@@ -46,6 +46,7 @@ import { TransactionsComponent } from './views/transactions/transactions.compone
 import { TransactionCardComponent } from './components/Transaction/transaction-card/transaction-card.component';
 import { UsersComponent } from './views/users/users/users.component';
 import { SettingsComponent } from './views/settings/settings/settings.component';
+import { ProductDetailComponent } from './views/listings/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -69,7 +70,8 @@ import { SettingsComponent } from './views/settings/settings/settings.component'
     TransactionsComponent,
     TransactionCardComponent,
     UsersComponent,
-    SettingsComponent
+    SettingsComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

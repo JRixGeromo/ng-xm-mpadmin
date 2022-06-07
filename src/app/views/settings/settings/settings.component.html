@@ -20,7 +20,7 @@
                                 <h1 class="custom-menu-title">XMarketplace</h1>
                             </div>
                         </div>
-                        <div class="el-col el-col-12 d-flex-center mobile-center">
+                        <div class="el-col el-col-12 el-col-offset-1 el-col-xs-offset-0 el-col-xs-24 d-flex-center mobile-center">
                             <div><u>Upload a new logo</u></div>
                         </div>
                     </div>
@@ -58,8 +58,18 @@
                     <div class="el-row">
                         <div class="el-col el-col-4 el-col-xs-24">
                             <mat-checkbox [(ngModel)]="binance">Binance</mat-checkbox>
+                            <br/>
                             <mat-checkbox [(ngModel)]="enjin">Enjin</mat-checkbox>
+                            <br/>
                             <mat-checkbox [(ngModel)]="trustWallet">Trust Wallet</mat-checkbox>
+                        </div>
+                        <div class="el-col el-col-12 el-col-offset-1 el-col-xs-offset-0 el-col-xs-24">
+                            <mat-checkbox [(ngModel)]="coinbase">Coinbase</mat-checkbox>
+                            <br/>
+                            <mat-checkbox [(ngModel)]="metamask">Metamask</mat-checkbox>
+                            <br/>
+                            <mat-checkbox [(ngModel)]="other"></mat-checkbox>
+                            <input matInput placeholder="Other:" [(ngModel)]="otherInput">
                         </div>
                     </div>
                     <div class="el-row mobile-center" style="margin-top: 15px;">
@@ -87,20 +97,20 @@
                     <mat-expansion-panel-header>
                         <mat-panel-title>Commission Percentage</mat-panel-title>
                     </mat-expansion-panel-header>
-                    <div>Upload a logo in .jpg or .png format.</div>
-                    <div class="el-row">
-                        <div class="el-col el-col-6 el-col-xs-24" style="text-align: center; margin-top: 20px;">
-                            <div style="border: 1px solid #C4C4C4; padding: 20px 10px;">
-                                <h1 class="custom-menu-title">XMarketplace</h1>
+                    <div>Input the amount of commission to be deducted from the sale price before releasing to the seller.</div>
+                    <div style="margin-top: 10px;">
+                        <div class="el-row">
+                            <div class="el-col el-col-24">
+                                <div style="width: 160px;">
+                                    <input
+                                        [(ngModel)]="commission"
+                                        type="number"
+                                        placeholder="Type...."
+                                        style="height: 10px;"
+                                    >
+                                    <span class="fw-700 fs-20 fm-montserrat">%</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="el-col el-col-12 d-flex-center mobile-center">
-                            <div><u>Upload a new logo</u></div>
-                        </div>
-                    </div>
-                    <div class="el-row mobile-center">
-                        <div class="el-col el-col-6 el-col-xs-24">
-                            <div style="text-align: center;"><u>marketplacelogo.png</u></div>
                         </div>
                     </div>
                     <div class="el-row mobile-center" style="margin-top: 15px;">
@@ -109,7 +119,7 @@
                                 <button class="font-bold discard-btn custom-btn">
                                     DISCARD
                                 </button>
-                                <button class="font-bold save-btn custom-btn">
+                                <button (click)="updateCommission()" class="font-bold save-btn custom-btn">
                                     SAVE
                                 </button>
                             </span>
